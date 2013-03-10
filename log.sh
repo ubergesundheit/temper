@@ -2,6 +2,6 @@
 
 while [ 1 ]
 do
-    ./temper
+    sudo ./temper >> temperature.log
     sleep 5s
 done

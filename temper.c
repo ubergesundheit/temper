@@ -41,12 +41,14 @@ int main(){
 		struct tm *utc;
 		time_t t;
 		t = time(NULL);
-		utc = gmtime(&t);
-		
-		char dt[80];
-		strftime(dt, 80, "%d-%b-%Y %H:%M", utc);
+		//utc = gmtime(&t);
+		utc = localtime(&t);
 
-		printf("%s,%f\n", dt, tempc);
+		char dt[80];
+		strftime(dt, 80, "%d-%m-%Y %H:%M", utc);
+
+		printf("{date: new Date(), logdate: \"%s\", temperature: \"%f\"}", dt, tempc);
+		//printf("%f\n",tempc);
 		fflush(stdout);
 
 		return 0;

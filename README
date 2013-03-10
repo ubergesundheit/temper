@@ -8,6 +8,7 @@ Changes by me
 
 Replaced the pcsensor.h with a newer one from https://github.com/elpeo/rbtemper
 Changed the code of temper.c for my needs
+Scripts for insertion to mongodb and nodejs express server
 
 Install intructions (Debian / Ubuntu)
 =====================================
