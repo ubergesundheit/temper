@@ -23,7 +23,7 @@ int main(){
 			sleep(3);
 		}
 		else {
-	
+
 			tempc = pcsensor_get_temperature(lvr_winusb);
 			pcsensor_close(lvr_winusb);
 		}
@@ -38,17 +38,16 @@ int main(){
 		/* Apply calibrations */
 		tempc = (tempc * scale) + offset;
 
-		struct tm *utc;
-		time_t t;
-		t = time(NULL);
-		//utc = gmtime(&t);
+                /*struct tm *utc;
+                time_t t;
+                t = time(NULL);
 		utc = localtime(&t);
 
 		char dt[80];
-		strftime(dt, 80, "%d-%m-%Y %H:%M", utc);
+		strftime(dt, 80, "%Y-%m-%dT%H:%M:%S%z", utc);*/
 
-		printf("{date: new Date(), logdate: \"%s\", temperature: \"%f\"}", dt, tempc);
-		//printf("%f\n",tempc);
+		//printf("%s,%f\n", dt, tempc);
+		printf("%f\n",tempc);
 		fflush(stdout);
 
 		return 0;

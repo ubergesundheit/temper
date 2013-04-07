@@ -1,4 +1,4 @@
-A command line sensor logger for Temper1 devices
+A command line sensor binary for Temper1 devices
 
 Uses pcsensor.c by Michitaka Ohno, Juan Carlos Perez, Robert Kavaler and Torbjørn Hergum
 
@@ -8,7 +8,7 @@ Changes by me
 
 Replaced the pcsensor.h with a newer one from https://github.com/elpeo/rbtemper
 Changed the code of temper.c for my needs
-Scripts for insertion to mongodb and nodejs express server
+Changed the udev rules
 
 Install intructions (Debian / Ubuntu)
 =====================================
@@ -22,17 +22,6 @@ Install intructions (Debian / Ubuntu)
     make
 
 
-Usage instructions
-==================
-
-Run log.sh, you may need to run this as root depending on your udev rules, i.e.
-
-    sudo ./log.sh
-
-This will log the temperature every 5 seconds to stdout as a CSV stream which 
-you can pipe to a text stream and open in your favourite spreadsheet package 
-later. 
-
 
 To allow non-root users access
 ==============================
@@ -45,7 +34,7 @@ To allow non-root users access
 
 4. Reload the udev rules 
 
-    udevcontrol reload_rules
+    sudo udevadm control --reload-rules
 
 5. Unplug and replug the TEMPer device
 
