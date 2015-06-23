@@ -1,0 +1,8 @@
+usbtemps:
+  build: .
+  environment:
+    - SCHEDULE=@every 10s
+    - POST_URL=
+  devices:
+    - "/dev/bus/usb/001/020:/dev/bus/usb/001/020"
+  
